@@ -3,7 +3,7 @@ package com.aca.carfabric.ui;
 public class GraphicalUserInterface extends UserInterface {
 
     @Override
-    public boolean output(String[] message) {
+    public boolean output(String message) {
         return false;
     }
 

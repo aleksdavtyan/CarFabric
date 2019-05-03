@@ -1,7 +1,7 @@
 package com.aca.carfabric.vehicletypes;
 
-import com.aca.carfabric.Vehicle;
+import com.aca.carfabric.Car;
 
-public class Tractor extends Vehicle {
+public class Tractor extends Car {
 
 }

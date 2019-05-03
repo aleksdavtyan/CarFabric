@@ -8,7 +8,7 @@ public abstract class UserInterface {
      * @param message the message
      * @return true if success.
      */
-    public abstract boolean output(String[] message);
+    public abstract boolean output(String message);
 
     /**
      * Get values from user.
