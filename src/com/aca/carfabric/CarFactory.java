@@ -4,7 +4,7 @@ import com.aca.carfabric.carparts.CarBodyType;
 import com.aca.carfabric.ui.CommandLineUserInterface;
 import com.aca.carfabric.ui.GraphicalUserInterface;
 import com.aca.carfabric.ui.UserInterface;
-import com.aca.carfabric.vehicletypes.Crossover;
+import com.aca.carfabric.cartypes.Crossover;
 
 import static com.aca.carfabric.carparts.Engine.ELECTRICAL;
 
