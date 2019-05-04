@@ -10,20 +10,20 @@ import static com.aca.carfabric.carparts.CarBodyType.CROSSOVER;
 
 public class Crossover extends Car {
 
-    private int numberOfWheels;
+    private static final int NUMBER_OF_WHEELS = 4;
     private Engine engine;
     private LeadingWheels leadingWheels;
     private Interior interiorPart;
     private Exterior exteriorPart;
 
-    public Crossover(int numberOfWheels, Engine engine, LeadingWheels leadingWheels, Interior interior, Exterior exterior) {
-        this.numberOfWheels = numberOfWheels;
+    // Constructing/assembling the car
+    public Crossover(Engine engine, LeadingWheels leadingWheels, Interior interior, Exterior exterior) {
         this.engine = engine;
         this.leadingWheels = leadingWheels;
         this.interiorPart = interior;
         this.exteriorPart = exterior;
         // Calculate the price after assembling
         int carPrice = CROSSOVER.getPrice() + engine.getPrice() + leadingWheels.getPrice() + interior.getPrice() + exterior.getPrice();
-        System.out.println("The price of CROSSOVER car = " + carPrice);
+        System.out.println("The price of Crossover car = " + carPrice);
     }
 }

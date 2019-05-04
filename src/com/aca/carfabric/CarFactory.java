@@ -35,22 +35,42 @@ public class CarFactory {
      * Start the car assembling.
      */
     public void start() {
-        userInterface.output("Please type the numbers of car parts types, splitting them by spaces.");
-        carPartsNumbers = userInterface.readStr();
-        String[] parts = carPartsNumbers.split("\\s+");
-        this.carBodyType = Integer.parseInt(parts[0]);
+        userInterface.output("Please type the number of car body type.");
+        for (CarBodyType carBodyType : CarBodyType.values()) {
+            System.out.printf("%s - %s ", carBodyType.ordinal(), carBodyType + "; ");
+        }
+        this.carBodyType = userInterface.readInt();
 
-        this.engine = Integer.parseInt(parts[1]);
-        engineType = checkEngineType(this.engine);
-        this.leadingWheels = Integer.parseInt(parts[2]);
-        leadingWheelsType = checkLeadingWheelsType(this.leadingWheels);
-        this.interior = Integer.parseInt(parts[3]);
-        interiorType = chechInteriorType(this.interior);
-        this.exterior = Integer.parseInt(parts[4]);
-        exteriorType = chechExteriorType(this.exterior);
+        userInterface.output("Please type the number of engine type.");
+        for (Engine engineType : Engine.values()) {
+            System.out.printf("%s - %s ", engineType.ordinal(), engineType + "; ");
+        }
+        this.engine = userInterface.readInt();
+        this.engineType = checkEngineType(this.engine);
+
+        userInterface.output("Please type the number of leading wheels type.");
+        for (LeadingWheels leadingWheelsType : LeadingWheels.values()) {
+            System.out.printf("%s - %s ", leadingWheelsType.ordinal(), leadingWheelsType + "; ");
+        }
+        this.leadingWheels = userInterface.readInt();
+        this.leadingWheelsType = checkLeadingWheelsType(this.leadingWheels);
+
+        userInterface.output("Please type the number of interior type.");
+        for (Interior interiorType : Interior.values()) {
+            System.out.printf("%s - %s ", interiorType.ordinal(), interiorType + "; ");
+        }
+        this.interior = userInterface.readInt();
+        this.interiorType = chechInteriorType(this.interior);
+
+        userInterface.output("Please type the number of exterior type.");
+        for (Exterior exteriorType : Exterior.values()) {
+            System.out.printf("%s - %s ", exteriorType.ordinal(), exteriorType + "; ");
+        }
+        this.exterior = userInterface.readInt();
+        this.exteriorType = chechExteriorType(this.exterior);
 
         if (carBodyType == 0) {
-            Car car = new Crossover(4, engineType, leadingWheelsType, interiorType, exteriorType );
+            Car car = new Crossover(engineType, leadingWheelsType, interiorType, exteriorType);
         }
 
     }

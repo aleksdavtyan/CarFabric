@@ -13,7 +13,14 @@ public abstract class UserInterface {
     /**
      * Get values from user.
      *
-     * @return the size;
+     * @return the user input line;
      */
     public abstract String readStr();
+
+    /**
+     * Get values from user.
+     *
+     * @return the user input number;
+     */
+    public abstract int readInt();
 }

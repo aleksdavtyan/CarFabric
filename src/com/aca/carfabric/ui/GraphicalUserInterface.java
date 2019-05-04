@@ -11,4 +11,9 @@ public class GraphicalUserInterface extends UserInterface {
     public String readStr() {
         return null;
     }
+
+    @Override
+    public int readInt() {
+        return 0;
+    }
 }
