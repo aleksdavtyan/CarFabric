@@ -22,6 +22,7 @@ public class Crossover extends Car {
         this.leadingWheels = leadingWheels;
         this.interiorPart = interior;
         this.exteriorPart = exterior;
+
         // Calculate the price after assembling
         int carPrice = CROSSOVER.getPrice() + engine.getPrice() + leadingWheels.getPrice() + interior.getPrice() + exterior.getPrice();
         System.out.println("The price of Crossover car = " + carPrice);

@@ -1,7 +1,7 @@
 package com.aca.carfabric;
 
 import com.aca.carfabric.carparts.*;
-import com.aca.carfabric.cartypes.Crossover;
+import com.aca.carfabric.cartypes.*;
 import com.aca.carfabric.ui.CommandLineUserInterface;
 import com.aca.carfabric.ui.GraphicalUserInterface;
 import com.aca.carfabric.ui.UserInterface;
@@ -69,28 +69,32 @@ public class CarFactory {
         this.exterior = userInterface.readInt();
         this.exteriorType = checkExteriorType(this.exterior);
 
-        if (carBodyType == 0) {
-            Car car = new Crossover(engineType, leadingWheelsType, interiorType, exteriorType);
-        }
+        buildCar(this.carBodyType);
 
     }
 
-    private CarBodyType checkCarBodyType(int bodyType) {
+    private void buildCar(int bodyType) {
         switch (bodyType) {
             case 0:
-                return CarBodyType.CROSSOVER;
+                new Crossover(engineType, leadingWheelsType, interiorType, exteriorType);
+                break;
             case 1:
-                return CarBodyType.SEDAN;
+                new Sedan(engineType, leadingWheelsType, interiorType, exteriorType);
+                break;
             case 2:
-                return CarBodyType.HATCHBACK;
-            case 3:
-                return CarBodyType.TRUCK;
-            case 4:
-                return CarBodyType.TRACTOR;
-            case 5:
-                return CarBodyType.MOTORCYCLE;
+                new Hatchback(engineType, leadingWheelsType, interiorType, exteriorType);
+                break;
+//            case 3:
+//                new Truck(engineType, leadingWheelsType, interiorType, exteriorType);
+//                break;
+//            case 4:
+//                new Tractor(engineType, leadingWheelsType, interiorType, exteriorType);
+//                break;
+//            case 5:
+//                new Motorcycle(engineType, leadingWheelsType, interiorType, exteriorType);
+//                break;
             default:
-                return null;
+                break;
         }
     }
 
