@@ -84,15 +84,15 @@ public class CarFactory {
             case 2:
                 new Hatchback(engineType, leadingWheelsType, interiorType, exteriorType);
                 break;
-//            case 3:
-//                new Truck(engineType, leadingWheelsType, interiorType, exteriorType);
-//                break;
-//            case 4:
-//                new Tractor(engineType, leadingWheelsType, interiorType, exteriorType);
-//                break;
-//            case 5:
-//                new Motorcycle(engineType, leadingWheelsType, interiorType, exteriorType);
-//                break;
+            case 3:
+                new Truck(engineType, leadingWheelsType, interiorType, exteriorType);
+                break;
+            case 4:
+                new Tractor(engineType, leadingWheelsType, interiorType, exteriorType);
+                break;
+            case 5:
+                new Motorcycle(engineType, leadingWheelsType, interiorType, exteriorType);
+                break;
             default:
                 break;
         }
