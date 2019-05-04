@@ -3,8 +3,7 @@ package com.aca.carfabric.carparts;
 public enum Exterior {
 
     HEADLIGHT(100),
-    XENON(150),
-    TIRES_WHEELS(400);
+    XENON(150);
 
     private int price;
 

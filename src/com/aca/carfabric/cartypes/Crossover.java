@@ -16,12 +16,14 @@ public class Crossover extends Car {
     private Interior interiorPart;
     private Exterior exteriorPart;
 
-    public Crossover(int numberOfWheels, Engine engine) { //LeadingWheels leadingWheels, Interior interior, Exterior exterior
+    public Crossover(int numberOfWheels, Engine engine, LeadingWheels leadingWheels, Interior interior, Exterior exterior) {
         this.numberOfWheels = numberOfWheels;
         this.engine = engine;
-//        this.leadingWheels = leadingWheels;
-//        this.interiorPart = interior;
-//        this.exteriorPart = exterior;
-        System.out.println("The price of CROSSOVER = " + CROSSOVER.getPrice());
+        this.leadingWheels = leadingWheels;
+        this.interiorPart = interior;
+        this.exteriorPart = exterior;
+        // Calculate the price after assembling
+        int carPrice = CROSSOVER.getPrice() + engine.getPrice() + leadingWheels.getPrice() + interior.getPrice() + exterior.getPrice();
+        System.out.println("The price of CROSSOVER car = " + carPrice);
     }
 }
