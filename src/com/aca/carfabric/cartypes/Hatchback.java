@@ -25,6 +25,6 @@ public class Hatchback extends Car {
 
         // Calculate the price after assembling
         int carPrice = HATCHBACK.getPrice() + engine.getPrice() + leadingWheels.getPrice() + interior.getPrice() + exterior.getPrice();
-        System.out.println("The price of Crossover car = " + carPrice);
+        System.out.println("The price of " + HATCHBACK + " = " + carPrice);
     }
 }

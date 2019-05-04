@@ -24,6 +24,6 @@ public class Sedan extends Car {
 
         // Calculate the price after assembling
         int carPrice = SEDAN.getPrice() + engine.getPrice() + leadingWheels.getPrice() + interior.getPrice() + exterior.getPrice();
-        System.out.println("The price of Crossover car = " + carPrice);
+        System.out.println("The price of " + SEDAN + " = " + carPrice);
     }
 }
