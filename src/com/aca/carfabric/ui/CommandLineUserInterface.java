@@ -10,7 +10,7 @@ public class CommandLineUserInterface extends UserInterface {
     public boolean output(String message) {
         System.out.println(message);
         for(CarBodyType carBodyType : CarBodyType.values())
-            System.out.print(carBodyType + "; ");
+            System.out.printf("%s - %s ", carBodyType.ordinal(), carBodyType + "; ");
             return true;
     }
 
@@ -18,10 +18,8 @@ public class CommandLineUserInterface extends UserInterface {
     public String readStr() {
         //get Car Body Type
         Scanner strScanner = new Scanner(System.in);
-        String carBodyType;
-        carBodyType = strScanner.nextLine();
-        if (carBodyType == null)
-            throw new IllegalArgumentException("The carBodyType cannot be null");
-        return carBodyType;
+        String carPartsNumbers;
+        carPartsNumbers = strScanner.nextLine();
+        return carPartsNumbers;
     }
 }

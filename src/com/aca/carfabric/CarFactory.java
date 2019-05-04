@@ -7,11 +7,17 @@ import com.aca.carfabric.ui.UserInterface;
 import com.aca.carfabric.cartypes.Crossover;
 
 import static com.aca.carfabric.carparts.Engine.ELECTRICAL;
+import static java.lang.Integer.parseInt;
 
 public class CarFactory {
 
     private UserInterface userInterface;
-    private String carBodyType;
+    private String carPartsNumbers;
+    private int carBodyType;
+    private int engine;
+    private int leadingWheels;
+    private int interior;
+    private int exterior;
 
     public CarFactory(InterfaceType interfaceType) {
         switch (interfaceType) {
@@ -28,12 +34,24 @@ public class CarFactory {
      * Start the car assembling.
      */
     public void start() {
-        userInterface.output("Please type the car body type.");
-        carBodyType = userInterface.readStr();
-        if (carBodyType.equals(CarBodyType.CROSSOVER.getName())) {
-            Car car = new Crossover(4,ELECTRICAL);
+        userInterface.output("Please type the car parts type number splitting them by spaces.");
+        carPartsNumbers = userInterface.readStr();
+        String[] parts = carPartsNumbers.split("\\s+");
+        this.carBodyType = Integer.parseInt(parts[0]);
+        this.engine = Integer.parseInt(parts[1]);
+        this.leadingWheels = Integer.parseInt(parts[2]);
+        this.interior = Integer.parseInt(parts[3]);
+        this.exterior = Integer.parseInt(parts[4]);
+
+        if (carBodyType == 0) {
+            Car car = new Crossover(4, ELECTRICAL);
 
         }
 
     }
+
+    void checkParts(int partNumber) {
+
+    }
+
 }
