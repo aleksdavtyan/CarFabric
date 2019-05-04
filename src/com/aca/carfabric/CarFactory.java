@@ -60,14 +60,14 @@ public class CarFactory {
             System.out.printf("%s - %s ", interiorType.ordinal(), interiorType + "; ");
         }
         this.interior = userInterface.readInt();
-        this.interiorType = chechInteriorType(this.interior);
+        this.interiorType = checkInteriorType(this.interior);
 
         userInterface.output("Please type the number of exterior type.");
         for (Exterior exteriorType : Exterior.values()) {
             System.out.printf("%s - %s ", exteriorType.ordinal(), exteriorType + "; ");
         }
         this.exterior = userInterface.readInt();
-        this.exteriorType = chechExteriorType(this.exterior);
+        this.exteriorType = checkExteriorType(this.exterior);
 
         if (carBodyType == 0) {
             Car car = new Crossover(engineType, leadingWheelsType, interiorType, exteriorType);
@@ -122,7 +122,7 @@ public class CarFactory {
         }
     }
 
-    private Interior chechInteriorType(int interiorType) {
+    private Interior checkInteriorType(int interiorType) {
         switch (interiorType) {
             case 0:
                 return Interior.CLOTH_SEATS;
@@ -133,7 +133,7 @@ public class CarFactory {
         }
     }
 
-    private Exterior chechExteriorType(int exteriorType) {
+    private Exterior checkExteriorType(int exteriorType) {
         switch (exteriorType) {
             case 0:
                 return Exterior.HEADLIGHT;
